@@ -58,7 +58,7 @@ object Markdown extends Plugin {
 
       val ss = Scraper.scrapeBuild.value
 
-      val pegdown = new PegDownProcessor(ALL - HARDWRAPS - QUOTES - SMARTS)
+      val pegdown = new PegDownProcessor(ALL - HARDWRAPS - QUOTES - SMARTS, 60000)
 
       for {
         (src, path) <- markdownMap.value
